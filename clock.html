@@ -5,13 +5,26 @@
   <meta charset="UTF-8">
   <title>A simple clock</title>
 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data.min.js'></script>
+  
+  <style>
+        .clock {
+            font: bold 18px consolas;
+            <!-- color:white; -->
+            display: inline-block;
+            border-radius: 5px;
+            padding: 2px 5px;
+            background-colour: rgba(0,0,0,0,5);
+        }
+    </style>
 </head>
 
 <body translate="no" >
-  <div id="output"></div>
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data.min.js'></script>
+  <div class="clock">
+    <p id="output"></p>
+    <p>AXON BODY 2 4S08-33081</p>
+  </div>
   <script>
 // https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 var urlParams;
@@ -28,9 +41,6 @@ var urlParams;
 })();
 
 var output = document.getElementById("output");
-if (urlParams["style"]) output.setAttribute("style", urlParams["style"]);
-if (urlParams["bodyStyle"]) document.body.setAttribute("style", urlParams["bodyStyle"]);
-
 var c;
 setInterval(
 c = function() {
@@ -39,6 +49,5 @@ c = function() {
 c();
 
   </script>
-  <p> AXON BODY 2  4S08-33081</p>
 </body>
 </html>
